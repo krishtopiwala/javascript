@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fadde1;
+    margin: 15px;
+    width: 1024px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.container {
+    border: 2px solid black;
+    height: 450px;
+}
+
+.hide {
+    display: none;
+}
+
+#heading {
+    margin-top: 15px;
+    font-size: 35px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.label {
+    display: block;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.numInput {
+    border: none;
+    border-bottom: 2px inset #808080;
+    padding: 4px;
+    width: 350px;
+}
