@@ -59,6 +59,9 @@ function displayGuess(guess) {
     guessSlot.innerHTML += `${guess}, `;
     numGuess++;
     remaining.innerHTML = `${11 - numGuess}`;
+    if (remaining.innerHTML < 5) {
+        remaining.classList.add('guessesAnimation');
+    }
 }
 
 function displayMessage(message) {
@@ -85,6 +88,7 @@ function newGame() {
         remaining.innerHTML = `${11 - numGuess}`;
         userInput.removeAttribute('disabled');
         startOver.removeChild(p);
+        remaining.classList.remove('guessesAnimation');
         playGame = true;
     });
 }
