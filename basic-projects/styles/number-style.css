@@ -1,6 +1,14 @@
 body {
     background-color: #212121;
     color: #fff;
+    font-family: sans-serif;
+}
+
+:root {
+    --primaryColor: #5a0ec6;
+    --white: #fff;
+    --black: #000;
+    --red: #ff0000;
 }
 
 #wrapper {
@@ -9,4 +17,119 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#content {
+    border: 5px solid red;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 0px 0px white;
+    padding: 55px;
+    text-align: center;
+}
+
+#content h1 {
+    color: var(--primaryColor);
+}
+
+#content p {
+    font-size: 18px;
+}
+
+#content p span {
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form #guessField {
+    height: 45px;
+    border: none;
+    border-bottom: 3px solid black;
+    margin-top: 15px;
+}
+
+.form input[type="text"] {
+    font-size: 16px;
+    text-align: center;
+}
+
+.form #guessField::placeholder {
+    font-size: 16px;
+    text-align: center;
+}
+
+.form #guessField:focus {
+    outline: none;
+}
+
+.form #subt {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 19px;
+    font-weight: 700;
+    background-color: var(--primaryColor);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+}
+
+.form #subt:hover {
+    cursor: pointer;
+    background-color: #3f078d;
+}
+
+/* .resultParas .lastResult {
+    animation-name: guesses;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+} */
+
+.guessesAnimation {
+    animation-name: guesses;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes guesses {
+    0% {
+        color: var(--black);
+    }
+    25% {
+        color: var(--red);
+    }
+    50% {
+        color: var(--black);
+    }
+    75% {
+        color: var(--red);
+    }
+    100% {
+        color: var(--black);
+    }
+}
+
+.button {
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--primaryColor);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+}
+
+.button:hover {
+    cursor: pointer;
 }
