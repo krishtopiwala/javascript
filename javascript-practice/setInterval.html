@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript setInterval() Method</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is setInterval() Method of JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const sayDate = function(str) {
+            console.log(str, Date.now().toLocaleString());
+        }
+
+        const intervalId = setInterval(sayDate, 1000, "Hello, JavaScript");
+    </script>
+</body>
+</html>
