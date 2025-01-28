@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        /* #wrapper {
+
+        } */
+
+        .github-img {
+            height: 250px;
+            width: 250px;
+        }
+        
+        #heading-followers {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <img src="https://avatars.githubusercontent.com/u/145561450?v=4" alt="" class="github-img">
+        <h3 id="heading-followers">0 followers</h3>
+    </div>
+    <button id="btn">View Card</button>
+    <script>       
+        const wrapper = document.getElementById('wrapper');
+        const divImg = document.createElement('img');
+        const followers = document.createElement('h3');
+
+        document.getElementById('btn').addEventListener('click', function() {
+            const requestUrl = 'https://api.github.com/users/krishtopiwala';
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestUrl);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    const data = JSON.parse(this.responseText);
+                    console.log(data.avatar_url);
+                    console.log(data.followers);
+                    divImg.classList.add('github-img');
+                    divImg.setAttribute('src', `${data.avatar_url}`);
+                    followers.innerText = `${data.followers} followers`;
+                    wrapper.appendChild(divImg);
+                    wrapper.appendChild(followers);
+                }
+            }
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
