@@ -5,31 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Request</title>
     <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
         body {
             background-color: #212121;
             color: #fff;
         }
 
-        /* #wrapper {
+        #wrapper {
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            height: 97lvh;
+            justify-content: center;
+            align-items: center;
+            
+        }
 
-        } */
+        #content {
+            box-shadow: 0px 0px 7px #fff;
+            padding: 25px;
+            border-radius: 5px;
+        }
 
         .github-img {
             height: 250px;
             width: 250px;
+            border-radius: 50%;
         }
         
         #heading-followers {
-            font-size: 20px;
+            font-size: 23px;
+            text-align: center;
+            margin-top: 8px;
+            font-family: sans-serif;
+            color: orange;
         }
     </style>
 </head>
 <body>
     <div id="wrapper">
-        <img src="https://avatars.githubusercontent.com/u/145561450?v=4" alt="" class="github-img">
-        <h3 id="heading-followers">0 followers</h3>
+        <div id="content">
+            <img src="https://avatars.githubusercontent.com/u/145561450?v=4" alt="" class="github-img">
+            <h3 id="heading-followers">0 followers</h3>
+        </div>
+        <button id="btn">View Card</button>
     </div>
-    <button id="btn">View Card</button>
     <script>       
         const wrapper = document.getElementById('wrapper');
         const divImg = document.createElement('img');
@@ -42,6 +65,7 @@
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     const data = JSON.parse(this.responseText);
+                    console.log(data.login);
                     console.log(data.avatar_url);
                     console.log(data.followers);
                     divImg.classList.add('github-img');
