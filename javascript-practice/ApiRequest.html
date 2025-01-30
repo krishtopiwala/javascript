@@ -23,7 +23,7 @@
             align-items: center;
             
         }
-
+        
         #content {
             box-shadow: 0px 0px 7px #fff;
             padding: 25px;
@@ -39,22 +39,34 @@
         #heading-followers {
             font-size: 23px;
             text-align: center;
-            margin-top: 8px;
+            margin-top: 10px;
             font-family: sans-serif;
-            color: orange;
+        }
+
+        #btn {
+            margin-top: 25px;
+            padding: 10px 35px;
+            font-size: 16px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: red;
+            color: #fff;
+        }
+
+        #btn:hover {
+            background-color: rgb(140, 3, 3);
         }
     </style>
 </head>
 <body>
     <div id="wrapper">
-        <div id="content">
-            <img src="https://avatars.githubusercontent.com/u/145561450?v=4" alt="" class="github-img">
-            <h3 id="heading-followers">0 followers</h3>
-        </div>
+        <div id="content"></div>
         <button id="btn">View Card</button>
     </div>
     <script>       
         const wrapper = document.getElementById('wrapper');
+        const content = document.querySelector('#content');
         const divImg = document.createElement('img');
         const followers = document.createElement('h3');
 
@@ -71,8 +83,9 @@
                     divImg.classList.add('github-img');
                     divImg.setAttribute('src', `${data.avatar_url}`);
                     followers.innerText = `${data.followers} followers`;
-                    wrapper.appendChild(divImg);
-                    wrapper.appendChild(followers);
+                    followers.setAttribute('id', 'heading-followers');
+                    content.appendChild(divImg);
+                    content.appendChild(followers);
                 }
             }
             xhr.send();
