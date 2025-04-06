@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quoter Generator API</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 97lvh;
+            font-family: sans-serif;
+        }
+
+        #quote-container {
+            text-align: center;
+            padding: 43px;
+        }
+
+        h1 {
+            color: darkorange;
+            text-decoration: underline;
+        }
+
+        #quote-author, #quote-type {
+            color: #f71735;
+            font-size: 22px;
+        }
+
+        #quote-type {
+            color: #fee440;
+        }
+
+        #get-quote-btn {
+            border: none;
+            background: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #7678ed;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #get-quote-btn:hover {
+            background-color: #595bc5;
+        }
+    </style>
+</head>
+<body>
+    <div id="quote-container">
+        <h1>Quote Generator</h1>
+        <h3 id="quote-heading"></h3>
+        <p id="quote-author"></p>
+        <p id="quote-type"></p>
+        <button id="get-quote-btn">Get Quote</button>
+    </div>
+    <script src="apiQuote.js"></script>
+</body>
+</html>
